@@ -9,10 +9,14 @@ for(layer = [0:20]) {
     translate([-narrow_layer_width/2, -narrow_layer_width/2, layer*layer_height*2+layer_height]) {
         difference() {
             cube([narrow_layer_width, narrow_layer_width, layer_height]);
-            for(circle = [0:4]) {
-                translate([layer_height + layer_height*(circle)*1.5, 50, layer_height/2]) {
-                    rotate([90,0,0]) {
-                        cylinder(100, d=layer_height);
+            for(side = [0:3]) {
+                rotate([0,0,90*side]) {
+                    for(circle = [0:4]) {
+                        translate([layer_height + layer_height*(circle)*1.5, 50, layer_height/2]) {
+                            rotate([90,0,0]) {
+                                cylinder(100, d=layer_height);
+                            }
+                        }
                     }
                 }
             }
