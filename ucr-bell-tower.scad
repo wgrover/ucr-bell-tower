@@ -1,4 +1,4 @@
-$fn=50;
+// $fn=50;
 wide_layer_width = 55;
 narrow_layer_width = 52;
 layer_height = 2;
@@ -38,6 +38,7 @@ difference() {   // Hollows out the core
             }
         }
     }
+    // core
     translate([-core_width/2, -core_width/2, -1]) {
         cube([core_width, core_width, 100]);
     }
